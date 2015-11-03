@@ -1,5 +1,5 @@
 # top-movies
-Displays the top 10 movies and their trailers.
+Displays the top 6 movies and their trailers.
 
 ## Requirements
 * [Python 2.7.x or higher](https://www.python.org/downloads/)
