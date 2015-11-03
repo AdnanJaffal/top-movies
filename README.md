@@ -8,4 +8,4 @@ Displays the top 6 movies and their trailers.
 * [Download files](https://github.com/AdnanJaffal/top-movies/archive/master.zip)
 * Open the main file in Python IDLE: `top_movies.py`
 * Compile and run the program.
-* Browser should open to webpage (if not, `top_movies.html` is located inside root folder)
+* Browser should open to webpage (if not, `top_movies.html` is created inside root folder)
