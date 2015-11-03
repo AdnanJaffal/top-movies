@@ -2,7 +2,6 @@ import webbrowser
 import os
 import re
 
-
 # Styles and scripting for the page
 main_page_head = '''
 <!DOCTYPE html>
@@ -75,18 +74,16 @@ main_page_head = '''
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
 
             // Output rating below video
-            var label=string.bold(IMDB Rating: );
-            var rating=$(this).attr('data-rating');
-            var result=label.concat(rating);
-            $("#display-rating").html(result);
+            var display = document.getElementById('display-rating-text');
+            display.innerHTML = $(this).attr('data-rating');
             
             // Output storyline below video
-            var story=$(this).attr('data-storyline');
-            $("#display-storyline").html(string.bold(Storyline: ) + story);
+            var display = document.getElementById('display-storyline-text');
+            display.innerHTML = $(this).attr('data-storyline');
 
             // Output cast below video
-            var cast=$(this).attr('data-cast');
-            $("#display-cast").html(string.bold(Cast: ) + cast);
+            var display = document.getElementById('display-cast-text');
+            display.innerHTML = $(this).attr('data-cast');
             
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
@@ -120,13 +117,13 @@ main_page_content = '''
           </div>
           <div class="modal-body">
               <div class="modal-rating" id="display-rating">
-                <p><b>"IMDB Rating: "</b></p>
+                  <p><b>IMDB Rating: </b><p id="display-rating-text"></p></p>
               </div>
               <div class="modal-story" id="display-storyline">
-                <p><b>"Storyline: "</b></p>
+                  <p><b>Storyline: </b><p id="display-storyline-text"></p></p>
               </div>
               <div class="modal-cast" id="display-cast">
-                <p><b>"IMDB Rating: "</b></p>
+                  <p><b>Cast: </b><p id="display-cast-text"></p></p>
               </div>
           </div>
         </div>
@@ -137,7 +134,7 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Adnan Jaffal's Top Movies</a>
+            <a class="navbar-brand" style="color:white">Adnan Jaffal's Top Movies</a>
           </div>
         </div>
       </div>
@@ -197,4 +194,4 @@ def open_movies_page(movies):
 
     # Open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
-    #webbrowser.open('file://' + url, new=2)
+    webbrowser.open('file://' + url, new=2)
