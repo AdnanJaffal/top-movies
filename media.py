@@ -1,10 +1,13 @@
 # Import packages and modules
 import webbrowser
 
+
 # Movie class
 class Movie():
-    # Initializes object with title, storyline, cast, rating, poster url, youtube url
-    def __init__(self, movie_title, movie_storyline, stars, imdb_rating, poster_image, trailer):
+    # Initializes object with title, storyline, cast, rating, poster url,
+    # youtube url
+    def __init__(self, movie_title, movie_storyline, stars, imdb_rating,
+                 poster_image, trailer):
         self.title = movie_title
         self.storyline = movie_storyline
         self.cast = stars
